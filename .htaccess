@@ -1,0 +1,27 @@
+Options -Indexes
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_URI} ^(.*/)(jelajah|video|cari|tentang)\.php
+RewriteRule ^(jelajah|video|cari|tentang)\.php$ %1%2 [R=301,L,QSA]
+RewriteRule ^berita/([a-z0-9-]+)/?$ berita.php?slug=$1 [L,QSA]
+RewriteRule ^jelajah/?$ jelajah.php [L,QSA]
+RewriteRule ^cari/?$ cari.php [L,QSA]
+RewriteRule ^tentang/?$ tentang.php [L,QSA]
+RewriteRule ^video/?$ video.php [L,QSA]
+RewriteRule ^video/([a-z0-9-]+)/?$ video.php?slug=$1 [L,QSA]
+RewriteRule ^kategori/([a-z0-9-]+)/?$ kategori.php?slug=$1 [L,QSA]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+</IfModule>
+
+<IfModule mod_php.c>
+php_value upload_max_filesize 64M
+php_value post_max_size 72M
+php_value memory_limit 256M
+</IfModule>
+
+<FilesMatch "\.(sql|md)$">
+Require all denied
+</FilesMatch>
