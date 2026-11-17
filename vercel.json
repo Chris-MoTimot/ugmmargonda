@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "receives": [
+    {
+      "source": "/(.*\\.php)",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "destination": "/index.php"
+    }
+  ]
+}
