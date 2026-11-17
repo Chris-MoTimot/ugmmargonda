@@ -2,10 +2,11 @@
 declare(strict_types=1);
 
 define('APP_ROOT', dirname(__DIR__));
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'depokin');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com');
+define('DB_PORT', '4000');
+define('DB_USER', '46jZHgSHadbdFwT.root');
+define('DB_PASS', 'X6Gf4DPW0KGeQhsR');
+define('DB_DATABASE', 'depokin');
 
 $docRoot = isset($_SERVER['DOCUMENT_ROOT']) ? realpath($_SERVER['DOCUMENT_ROOT']) : '';
 $appRoot = realpath(APP_ROOT);
